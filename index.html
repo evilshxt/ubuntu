@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Washington - SRC President 2025 | Ubuntu Leadership</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        accent: {
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                        },
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#1a1a1a',
+                            700: '#2a2a2a',
+                        }
+                    },
+                    fontFamily: {
+                        'heading': ['Poppins', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slide-up 0.8s ease-out',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 10px rgba(34, 197, 94, 0.3); }
+            100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.5); }
+        }
+        
+        @keyframes slide-up {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #22c55e, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #bbf7d0 100%);
+        }
+        
+        .dark .hero-bg {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #14532d 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .campaign-image {
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .campaign-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #22c55e, #10b981);
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+    </style>
+</head>
+<body class="font-body bg-gray-50 dark:bg-gray-900 transition-colors duration-300 overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-users text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-heading font-bold text-xl gradient-text">WASHINGTON</h1>
+                        <p class="text-xs text-gray-600 dark:text-gray-300">Ubuntu Leadership</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-500 transition-colors font-medium">Home</a>
+                    <a href="#vision" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-500 transition-colors font-medium">Vision</a>
+                    <a href="#solutions" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-500 transition-colors font-medium">Solutions</a>
+                    <a href="#counters" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-500 transition-colors font-medium">Progress</a>
+                    <a href="#community" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-500 transition-colors font-medium">Community</a>
+                    <a href="#media" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-500 transition-colors font-medium">Media</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    <button class="md:hidden p-2 text-gray-700 dark:text-gray-300" id="mobile-menu-button">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden mt-4 pb-2" id="mobile-menu">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-500 transition-colors font-medium">Home</a>
+                    <a href="#vision" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-500 transition-colors font-medium">Vision</a>
+                    <a href="#solutions" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-500 transition-colors font-medium">Solutions</a>
+                    <a href="#counters" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-500 transition-colors font-medium">Progress</a>
+                    <a href="#community" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-500 transition-colors font-medium">Community</a>
+                    <a href="#media" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-500 transition-colors font-medium">Media</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen hero-bg flex items-center relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="font-heading font-bold text-5xl md:text-6xl lg:text-7xl text-gray-900 dark:text-white mb-6 leading-tight">
+                    <span class="block">UBUNTU LEADERSHIP</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+                    I am because we are — Together, we rise. Together, we lead.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <span class="px-4 py-2 bg-primary-500 text-white rounded-full font-medium">#UbuntuLeadership</span>
+                    <span class="px-4 py-2 bg-accent-500 text-white rounded-full font-medium">#SRC2025</span>
+                    <span class="px-4 py-2 bg-primary-600 text-white rounded-full font-medium">#YourVoiceMyMission</span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <button class="bg-gradient-to-r from-primary-500 to-accent-500 text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform">
+                        <i class="fas fa-vote-yea mr-2"></i>Vote for Change
+                    </button>
+                    <a href="#vision" class="border-2 border-primary-500 text-primary-500 px-8 py-3 rounded-full font-bold hover:bg-primary-500 hover:text-white transition-all">
+                        <i class="fas fa-arrow-down mr-2"></i>Explore Vision
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#vision" class="text-primary-500 text-2xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Vision Cards Section -->
+    <section id="vision" class="py-16 bg-white dark:bg-gray-800 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="font-heading font-bold text-4xl gradient-text mb-4">Our Vision</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    The leadership we deserve. The change we need. Transparency, empowerment, and meaningful student engagement.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-sm card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mb-4 text-white">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800 dark:text-white">Academic Excellence</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Past questions, study materials, and academic resources accessible to all students.</p>
+                    <div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                        <p class="text-xs text-right text-primary-500 mt-1">85% student approval</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-sm card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mb-4 text-white">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800 dark:text-white">Mentorship Platform</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Connecting freshers with experienced mentors for academic and personal growth.</p>
+                    <div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 78%"></div>
+                        </div>
+                        <p class="text-xs text-right text-primary-500 mt-1">78% student approval</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-sm card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mb-4 text-white">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800 dark:text-white">Budget Transparency</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Real-time tracking of SRC fund allocations and project spending.</p>
+                    <div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 92%"></div>
+                        </div>
+                        <p class="text-xs text-right text-primary-500 mt-1">92% student approval</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-sm card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mb-4 text-white">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800 dark:text-white">Course Reviews</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Anonymous rating and feedback system for courses and lecturers.</p>
+                    <div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 81%"></div>
+                        </div>
+                        <p class="text-xs text-right text-primary-500 mt-1">81% student approval</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-sm card-hover" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mb-4 text-white">
+                        <i class="fas fa-address-book"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800 dark:text-white">Rep Directory</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Complete contact information and office hours for all representatives.</p>
+                    <div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 87%"></div>
+                        </div>
+                        <p class="text-xs text-right text-primary-500 mt-1">87% student approval</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-sm card-hover" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mb-4 text-white">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800 dark:text-white">Petition Tracker</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Track student issues and SRC response status in real-time.</p>
+                    <div>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 89%"></div>
+                        </div>
+                        <p class="text-xs text-right text-primary-500 mt-1">89% student approval</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Progress Counters Section -->
+    <section id="counters" class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="font-heading font-bold text-4xl gradient-text mb-4">Campaign Progress</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300">
+                    Tracking our journey to victory - every vote counts!
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-sm card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-3xl font-bold mb-2 gradient-text" id="days-counter">0</div>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Days Campaigning</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-sm card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-3xl font-bold mb-2 gradient-text" id="supporters-counter">0</div>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Supporters</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-sm card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-3xl font-bold mb-2 gradient-text" id="events-counter">0</div>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Campus Events</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6 text-center shadow-sm card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-3xl font-bold mb-2 gradient-text" id="messages-counter">0</div>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm">Messages Received</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-gradient-to-r from-primary-500 to-accent-500 rounded-xl p-6 text-center" data-aos="zoom-in">
+                <h3 class="font-bold text-xl text-white mb-3">Campaign Progress Tracker</h3>
+                <div class="w-full bg-white bg-opacity-30 rounded-full h-2 mb-3">
+                    <div class="bg-white h-2 rounded-full" style="width: 65%" id="progress-bar"></div>
+                </div>
+                <p class="text-white text-sm">65% of campaign goals achieved - Help us reach 100%!</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Solutions Section -->
+    <section id="solutions" class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="font-heading font-bold text-4xl gradient-text mb-4">Solutions We'll Deliver</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300">
+                    The current SRC Administration has set the standard. Now, I'm here to raise it.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div data-aos="fade-right">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" 
+                             alt="Students collaborating" 
+                             class="rounded-xl shadow-md campaign-image">
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0 text-white">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2 text-gray-800 dark:text-white">Innovation First</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Leveraging modern technology to solve age-old student problems with digital platforms for academic resources, mentorship connections, and transparent governance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-accent-500 rounded-full flex items-center justify-center flex-shrink-0 text-white">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2 text-gray-800 dark:text-white">Community Driven</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Every decision backed by student voice through regular polls, open forums, and digital suggestion boxes to ensure true representation.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0 text-white">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2 text-gray-800 dark:text-white">Transparent Governance</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Open books with real-time budget tracking, clear processes documented publicly, and monthly accountability reports to the student body.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-accent-600 rounded-full flex items-center justify-center flex-shrink-0 text-white">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2 text-gray-800 dark:text-white">Academic Support</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Centralized repository for past questions, study materials, and a peer tutoring network to elevate academic performance across all departments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Media & Quotes Section -->
+    <section id="media" class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="font-heading font-bold text-4xl gradient-text mb-4">Campaign Media</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300">Voices, visions, and visual stories from the campaign trail</p>
+            </div>
+            
+            <!-- Flyers Section -->
+            <div class="mb-12" data-aos="fade-up">
+                <h3 class="font-bold text-2xl text-center mb-6 text-gray-800 dark:text-white">Campaign Flyers</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <img src="css/assets/ubuntu.jpeg" alt="Ubuntu Campaign Flyer" class="w-full h-auto campaign-image">
+                    </div>
+                    <div class="rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <img src="css/assets/stand.jpeg" alt="Stand Campaign Flyer" class="w-full h-auto campaign-image">
+                    </div>
+                    <div class="rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                        <img src="css/assets/masspass.jpeg" alt="Mass Passport Campaign Flyer" class="w-full h-auto campaign-image">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quotes Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mb-4">
+                        <i class="fas fa-quote-left text-2xl text-primary-500"></i>
+                    </div>
+                    <blockquote class="text-gray-700 dark:text-gray-300 mb-4 italic">
+                        "I am because we are — that's the spirit of Ubuntu. Together, we rise. Together, we lead."
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mr-3 text-white">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-800 dark:text-white">Emmanuel Washington</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">SRC Presidential Aspirant</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mb-4">
+                        <i class="fas fa-quote-left text-2xl text-primary-500"></i>
+                    </div>
+                    <blockquote class="text-gray-700 dark:text-gray-300 mb-4 italic">
+                        "The current SRC Administration has set the standard. Now, I'm here to raise it. So help me God."
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mr-3 text-white">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-800 dark:text-white">Emmanuel Washington</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">#RaisingTheStandard</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mb-4">
+                        <i class="fas fa-quote-left text-2xl text-primary-500"></i>
+                    </div>
+                    <blockquote class="text-gray-700 dark:text-gray-300 mb-4 italic">
+                        "I'm standing for SRC President to serve with purpose, lead with compassion, and build a student body where every voice matters."
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mr-3 text-white">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-800 dark:text-white">Emmanuel Washington</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">#YourVoiceMyMission</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Community Messages Section -->
+    <section id="community" class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="font-heading font-bold text-4xl gradient-text mb-4">Community Voice</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300">Share your thoughts, show your support, join the conversation</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-sm mb-6" data-aos="fade-up">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-xl text-gray-800 dark:text-white">
+                            <i class="fas fa-comments text-primary-500 mr-2"></i>
+                            Messages Board
+                        </h3>
+                        <button id="post-message-btn" class="bg-gradient-to-r from-primary-500 to-accent-500 text-white px-4 py-2 rounded-lg font-medium hover:scale-105 transition-transform text-sm">
+                            <i class="fas fa-plus mr-1"></i>Post Message
+                        </button>
+                    </div>
+                    
+                    <div id="messages-container" class="space-y-4 max-h-[500px] overflow-y-auto pr-2">
+                        <!-- Messages will be loaded from Firebase here -->
+                        <div class="text-center py-6">
+                            <i class="fas fa-spinner fa-spin text-xl text-primary-500"></i>
+                            <p class="mt-2 text-gray-600 dark:text-gray-300">Loading messages...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Message Form Modal -->
+                <div id="message-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl p-6 max-w-md w-full mx-4 shadow-xl">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-bold text-xl text-gray-800 dark:text-white">Share Your Voice</h3>
+                            <button id="close-modal" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <form id="message-form">
+                            <div class="mb-4">
+                                <label class="block text-gray-700 dark:text-gray-300 mb-1 text-sm">Your Name</label>
+                                <input type="text" id="user-name" class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-white text-sm" placeholder="Enter your name" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 dark:text-gray-300 mb-1 text-sm">Your Message</label>
+                                <textarea id="user-message" rows="4" class="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-white text-sm" placeholder="Share your thoughts..." required></textarea>
+                            </div>
+                            <div class="flex space-x-3">
+                                <button type="button" id="cancel-message" class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors text-sm">Cancel</button>
+                                <button type="submit" class="flex-1 bg-gradient-to-r from-primary-500 to-accent-500 text-white px-4 py-2 rounded-lg hover:scale-105 transition-transform flex items-center justify-center text-sm">
+                                    <span id="submit-text">Post Message</span>
+                                    <i class="fas fa-spinner fa-spin ml-2 hidden" id="submit-spinner"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Special Services Section -->
+    <section class="py-16 bg-gradient-to-r from-primary-500 to-accent-500">
+        <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 max-w-4xl mx-auto shadow-lg relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="mb-6">
+                        <i class="fas fa-passport text-4xl text-primary-500 mb-3"></i>
+                        <h2 class="font-heading font-bold text-3xl gradient-text mb-4">WASHINGTON MASS PASSPORT REGISTRATION</h2>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        Get your passport with ease! 🌍 Join the WASHINGTON MASS PASSPORT REGISTRATION EXERCISE from the Washington Family in collaboration with Success Link Consult.
+                    </p>
+                    <a href="https://chat.whatsapp.com/LiIcLUKOpPfIWCJosEDQez" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-bold transition-all hover:scale-105 text-sm">
+                        <i class="fab fa-whatsapp mr-2"></i>Join WhatsApp Group
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action Section -->
+    <section class="py-16 bg-gray-900 text-white relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div data-aos="zoom-in" data-aos-duration="1000">
+                <h2 class="font-heading font-bold text-4xl md:text-5xl mb-6">
+                    <span class="gradient-text">LET'S MAKE HISTORY</span>
+                </h2>
+                <p class="text-xl mb-8 text-gray-300">
+                    This is just a taste. Elect us to unlock it all.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-gray-800 rounded-xl p-6" data-aos="flip-left" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-rocket text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">#TheSecondComing</h3>
+                        <p class="text-gray-300 text-sm">Revolutionary leadership for the digital age</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-xl p-6" data-aos="flip-left" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-accent-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">#WeAreAllInvolved</h3>
+                        <p class="text-gray-300 text-sm">Every student voice matters in our democracy</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-xl p-6" data-aos="flip-left" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">#RaisingTheStandard</h3>
+                        <p class="text-gray-300 text-sm">Building on excellence, reaching new heights</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="bg-gradient-to-r from-primary-500 to-accent-500 text-white px-8 py-3 rounded-lg font-bold hover:scale-105 transition-all">
+                        <i class="fas fa-vote-yea mr-2"></i>VOTE WASHINGTON
+                    </button>
+                    <button class="border-2 border-primary-500 text-primary-400 px-8 py-3 rounded-lg font-bold hover:bg-primary-500 hover:text-white transition-all">
+                        <i class="fas fa-bullhorn mr-2"></i>JOIN THE MOVEMENT
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-users text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-heading font-bold text-lg gradient-text">WASHINGTON</h3>
+                            <p class="text-xs text-gray-400">Ubuntu Leadership</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Leading with purpose, serving with compassion.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-base mb-3 text-primary-400">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#vision" class="hover:text-primary-400 transition-colors">Our Vision</a></li>
+                        <li><a href="#solutions" class="hover:text-primary-400 transition-colors">Solutions</a></li>
+                        <li><a href="#counters" class="hover:text-primary-400 transition-colors">Progress</a></li>
+                        <li><a href="#community" class="hover:text-primary-400 transition-colors">Community</a></li>
+                        <li><a href="#media" class="hover:text-primary-400 transition-colors">Media</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-base mb-3 text-primary-400">Campaign Tags</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">#Ubuntu</span>
+                        <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">#SRC2025</span>
+                        <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">#TogetherWeCan</span>
+                        <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">#RaisingTheStandard</span>
+                        <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">#YourVoiceMyMission</span>
+                        <span class="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs">#WeAreAllInvolved</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-base mb-3 text-primary-400">Connect With Us</h4>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors">
+                            <i class="fab fa-facebook-f text-white text-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors">
+                            <i class="fab fa-twitter text-white text-sm"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors">
+                            <i class="fab fa-instagram text-white text-sm"></i>
+                        </a>
+                        <a href="https://chat.whatsapp.com/LiIcLUKOpPfIWCJosEDQez" target="_blank" class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-500 transition-colors">
+                            <i class="fab fa-whatsapp text-white text-sm"></i>
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <h5 class="font-medium mb-1 text-gray-300 text-sm">Contact Email</h5>
+                        <a href="mailto:campaign@washington2025.com" class="text-primary-400 hover:text-primary-300 text-sm">campaign@washington2025.com</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 Emmanuel Washington Campaign. Ubuntu Leadership - I am because we are.
+                </p>
+                <p class="text-xs text-gray-500 mt-1">
+                    Authorized by Team Emmanuel Washington, UMaT SRC Presidential Campaign 2025
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Firebase configuration and initialization
+        const firebaseConfig = {
+            apiKey: "AIzaSyCpZWzr9yJbw7MNzEd6My0Apz3a3MoWCGs",
+            authDomain: "ubuntu-src.firebaseapp.com",
+            databaseURL: "https://ubuntu-src-default-rtdb.firebaseio.com",
+            projectId: "ubuntu-src",
+            storageBucket: "ubuntu-src.appspot.com",
+            messagingSenderId: "713412088065",
+            appId: "1:713412088065:web:3803ff0627df53454a4b00",
+            measurementId: "G-09PNMV7C24"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+        const messagesRef = database.ref('messages');
+        
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+        
+        // Load saved theme
+        if (localStorage.getItem('theme') === 'dark' || 
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        }
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+        
+        // Messages functionality with Firebase
+        const postMessageBtn = document.getElementById('post-message-btn');
+        const messageModal = document.getElementById('message-modal');
+        const closeModalBtn = document.getElementById('close-modal');
+        const cancelMessage = document.getElementById('cancel-message');
+        const messageForm = document.getElementById('message-form');
+        const messagesContainer = document.getElementById('messages-container');
+        const submitText = document.getElementById('submit-text');
+        const submitSpinner = document.getElementById('submit-spinner');
+        
+        // Open modal
+        postMessageBtn.addEventListener('click', () => {
+            messageModal.classList.remove('hidden');
+            document.getElementById('user-name').focus();
+        });
+        
+        // Close modal
+        function closeModal() {
+            messageModal.classList.add('hidden');
+            messageForm.reset();
+        }
+        
+        closeModalBtn.addEventListener('click', closeModal);
+        cancelMessage.addEventListener('click', closeModal);
+        
+        // Submit message to Firebase
+        messageForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('user-name').value.trim();
+            const message = document.getElementById('user-message').value.trim();
+            
+            if (name && message) {
+                // Show loading state
+                submitText.classList.add('hidden');
+                submitSpinner.classList.remove('hidden');
+                
+                // Push message to Firebase
+                messagesRef.push({
+                    name: name,
+                    message: message,
+                    timestamp: firebase.database.ServerValue.TIMESTAMP
+                }).then(() => {
+                    // Success
+                    closeModal();
+                    submitText.classList.remove('hidden');
+                    submitSpinner.classList.add('hidden');
+                }).catch((error) => {
+                    // Error
+                    console.error('Error posting message:', error);
+                    alert('There was an error posting your message. Please try again.');
+                    submitText.classList.remove('hidden');
+                    submitSpinner.classList.add('hidden');
+                });
+            }
+        });
+        
+        // Load messages from Firebase
+        function loadMessages() {
+            messagesContainer.innerHTML = `
+                <div class="text-center py-6">
+                    <i class="fas fa-spinner fa-spin text-xl text-primary-500"></i>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Loading messages...</p>
+                </div>
+            `;
+            
+            messagesRef.orderByChild('timestamp').limitToLast(50).on('value', (snapshot) => {
+                const messages = [];
+                snapshot.forEach((childSnapshot) => {
+                    messages.push({
+                        id: childSnapshot.key,
+                        ...childSnapshot.val()
+                    });
+                });
+                
+                // Reverse to show newest first
+                messages.reverse();
+                
+                // Update counter
+                document.getElementById('messages-counter').textContent = messages.length;
+                
+                if (messages.length === 0) {
+                    messagesContainer.innerHTML = `
+                        <div class="text-center py-6">
+                            <i class="fas fa-comment-slash text-xl text-primary-500"></i>
+                            <p class="mt-2 text-gray-600 dark:text-gray-300">No messages yet. Be the first to share your thoughts!</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                // Render messages
+                messagesContainer.innerHTML = messages.map((msg, index) => {
+                    const date = new Date(msg.timestamp);
+                    const timeAgo = getTimeAgo(date);
+                    const bgColor = index % 2 === 0 ? 'bg-primary-500' : 'bg-accent-500';
+                    
+                    return `
+                        <div class="bg-gray-50 dark:bg-gray-600 rounded-lg p-4" data-aos="fade-up" data-aos-delay="${index * 50}">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 ${bgColor} rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-user text-white text-xs"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <span class="font-medium text-gray-800 dark:text-white text-sm">${msg.name}</span>
+                                        <span class="text-xs text-gray-500">${timeAgo}</span>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-300 text-sm">${msg.message}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            });
+        }
+        
+        function getTimeAgo(date) {
+            const now = new Date();
+            const diffMs = now - date;
+            const diffSecs = Math.floor(diffMs / 1000);
+            const diffMins = Math.floor(diffSecs / 60);
+            const diffHrs = Math.floor(diffMins / 60);
+            const diffDays = Math.floor(diffHrs / 24);
+            
+            if (diffDays > 0) return `${diffDays}d ago`;
+            if (diffHrs > 0) return `${diffHrs}h ago`;
+            if (diffMins > 0) return `${diffMins}m ago`;
+            return 'Just now';
+        }
+        
+        // Animated counters
+        function animateCounters() {
+            const campaignStartDate = new Date('2025-01-01');
+            const daysCounter = document.getElementById('days-counter');
+            const supportersCounter = document.getElementById('supporters-counter');
+            const eventsCounter = document.getElementById('events-counter');
+            
+            // Days counter
+            const daysDiff = Math.floor((new Date() - campaignStartDate) / (1000 * 60 * 60 * 24));
+            animateValue(daysCounter, 0, daysDiff, 2000);
+            
+            // Supporters counter (random for demo)
+            animateValue(supportersCounter, 0, 1248, 2000);
+            
+            // Events counter (random for demo)
+            animateValue(eventsCounter, 0, 36, 2000);
+        }
+        
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.textContent = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+        
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Hero section animations
+        gsap.from('.hero-bg h1', {
+            duration: 1.5,
+            y: 50,
+            opacity: 0,
+            ease: 'power3.out'
+        });
+        
+        gsap.from('.hero-bg p', {
+            duration: 1,
+            y: 30,
+            opacity: 0,
+            delay: 0.3,
+            ease: 'power2.out'
+        });
+        
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            loadMessages();
+            animateCounters();
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100
+            });
+            
+            // Animate progress bar
+            gsap.to("#progress-bar", {
+                width: "65%",
+                duration: 1.5,
+                ease: "power2.out"
+            });
+        });
+        
+        // Close modal when clicking outside
+        messageModal.addEventListener('click', (e) => {
+            if (e.target === messageModal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
