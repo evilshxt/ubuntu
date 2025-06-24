@@ -1,0 +1,211 @@
+@import './assets.css';
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-20px);
+        opacity: 0.6;
+    }
+}
+
+/* Force hero content to show above canvas and animations */
+.hero-title,
+.hero-subtitle,
+.floating-badge,
+.cta-button,
+.secondary-button {
+  position: relative;
+  z-index: 10 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  transform: none !important;
+}
+
+/* If .hero-content is a container, enforce it too */
+.hero-content {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Just in case the parent is hidden or faded */
+section[style*="display: none"],
+section[style*="opacity: 0"] {
+  display: block !important;
+  opacity: 1 !important;
+}
+
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Hero Section Styles */
+.hero-title {
+    @apply text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-white;
+}
+
+.hero-subtitle {
+    @apply text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto;
+}
+
+.floating-badge {
+    /* Remove @apply animate-float; and use the CSS class directly */
+}
+
+.floating-icons {
+    @apply absolute inset-0 pointer-events-none;
+}
+
+.floating-icon {
+    @apply absolute opacity-0;
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+/* Button Styles */
+.cta-button {
+    @apply px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300;
+}
+
+.secondary-button {
+    @apply px-8 py-4 bg-white dark:bg-gray-800 border-2 border-green-600 dark:border-green-400 text-green-600 dark:text-green-400 font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300;
+}
+
+.cta-button-white {
+    @apply px-8 py-4 bg-white text-green-600 font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300;
+}
+
+.cta-button-outline {
+    @apply px-8 py-4 border-2 border-white text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 hover:bg-white hover:text-green-600;
+}
+
+/* Section Styles */
+.section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white;
+}
+
+.prose-content {
+    @apply text-gray-600 dark:text-gray-300;
+}
+
+/* Timeline Styles */
+.timeline {
+    @apply relative border-l-2 border-green-500 dark:border-green-400 ml-4;
+}
+
+.timeline-item {
+    @apply mb-12 ml-8;
+}
+
+.timeline-marker {
+    @apply absolute w-6 h-6 bg-green-500 dark:bg-green-400 rounded-full -left-3.5 border-4 border-white dark:border-gray-800;
+}
+
+.timeline-icon {
+    @apply flex items-center justify-center w-full h-full text-white;
+}
+
+.timeline-content {
+    @apply pl-2;
+}
+
+.timeline-date {
+    @apply text-sm font-semibold text-green-600 dark:text-green-400 mb-1;
+}
+
+.timeline-title {
+    @apply text-xl font-bold text-gray-900 dark:text-white mb-2;
+}
+
+.timeline-description {
+    @apply text-gray-600 dark:text-gray-400;
+}
+
+/* Value Cards */
+.value-card {
+    @apply bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200 dark:border-gray-700;
+}
+
+.value-icon {
+    @apply w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mb-4 text-green-600 dark:text-green-400;
+}
+
+.value-title {
+    @apply text-xl font-bold text-gray-900 dark:text-white mb-2;
+}
+
+.value-description {
+    @apply text-gray-600 dark:text-gray-400;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden;
+}
+
+.testimonial-content {
+    @apply p-6;
+}
+
+.testimonial-icon {
+    @apply mb-4;
+}
+
+.testimonial-text {
+    @apply italic text-gray-600 dark:text-gray-300 mb-6;
+}
+
+.testimonial-author {
+    @apply flex items-center px-6 pb-6;
+}
+
+.author-avatar {
+    @apply mr-4;
+}
+
+.author-name {
+    @apply font-bold text-gray-900 dark:text-white;
+}
+
+.author-title {
+    @apply text-sm text-gray-500 dark:text-gray-400;
+}
+
+/* Stat Cards */
+.stat-card {
+    @apply flex items-center space-x-4 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg;
+}
+
+.stat-icon {
+    @apply w-10 h-10 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center text-green-600 dark:text-green-400;
+}
+
+.stat-number {
+    @apply text-2xl font-bold text-gray-900 dark:text-white;
+}
+
+.stat-label {
+    @apply text-sm text-gray-500 dark:text-gray-400;
+}
+
+/* Footer Styles */
+.social-icon {
+    @apply text-gray-500 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200;
+}
+
+.footer-link {
+    @apply text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200;
+}
+
+.footer-input {
+    @apply px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-700 dark:text-white;
+}
+
+.footer-button {
+    @apply px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800;
+}

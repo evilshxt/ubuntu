@@ -1,0 +1,23 @@
+{
+  "name": "washington-project",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.10",
+    "aos": "^2.3.4",
+    "firebase": "^11.9.1",
+    "gsap": "^3.13.0",
+    "tailwindcss": "^4.1.10",
+    "three": "^0.177.0",
+    "typed.js": "^2.1.0"
+  }
+}

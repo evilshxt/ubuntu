@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Washington - UMaT SRC President 2025</title>
+    <link rel="stylesheet" href="src/css/vision.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    
+    <!-- Navigation Bar -->
+    <nav class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50 backdrop-blur-sm bg-opacity-95 dark:bg-opacity-95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                
+                <!-- Logo/Title -->
+                <div class="flex-shrink-0" style="font-family: 'LogoFont';">
+                    <a href="/main" class="text-xl font-bold text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors duration-200">
+                        Washington 2025
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/about" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 px-3 py-2 text-sm font-medium transition-colors duration-200">About</a>
+                    <a href="/campaign" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 px-3 py-2 text-sm font-medium transition-colors duration-200">Campaign</a>
+                    <a href="/contact" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 px-3 py-2 text-sm font-medium transition-colors duration-200">Contact</a>
+                    <a href="/resources" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 px-3 py-2 text-sm font-medium transition-colors duration-200">Resources</a>
+                    <a href="/vision" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 px-3 py-2 text-sm font-medium transition-colors duration-200 border-b-2 border-green-600 dark:border-green-400">Vision</a>
+                    
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200" aria-label="Toggle theme">
+                        <svg id="sun-icon" class="w-5 h-5 text-yellow-500 hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                        </svg>
+                        <svg id="moon-icon" class="w-5 h-5 text-gray-700 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <!-- Mobile Theme Toggle -->
+                    <button id="mobile-theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200" aria-label="Toggle theme">
+                        <svg id="mobile-sun-icon" class="w-5 h-5 text-yellow-500 hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                        </svg>
+                        <svg id="mobile-moon-icon" class="w-5 h-5 text-gray-700 dark:text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Hamburger button -->
+                    <button id="mobile-menu-button" type="button" class="p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500 transition-colors duration-200" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg id="hamburger-icon" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="close-icon" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+                <a href="/about" class="text-green-600 dark:text-green-400 bg-green-50 dark:bg-gray-800 block px-3 py-2 text-base font-medium rounded-md">About</a>
+                <a href="/campaign" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-gray-50 dark:hover:bg-gray-800 block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">Campaign</a>
+                <a href="/contact" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-gray-50 dark:hover:bg-gray-800 block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">Contact</a>
+                <a href="/resources" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-gray-50 dark:hover:bg-gray-800 block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">Resources</a>
+                <a href="/vision" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-gray-50 dark:hover:bg-gray-800 block px-3 py-2 text-base font-medium rounded-md transition-colors duration-200">Vision</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="min-h-screen relative">
+        <!-- Hero Section with Three.js Background -->
+        <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+            <canvas id="three-canvas" class="absolute inset-0 w-full h-full z-0"></canvas>
+            
+            <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-white" style="font-family: 'LogoFont';" data-aos="fade-up">
+                    Our <span class="text-green-500">Vision</span>
+                </h1>
+                <p class="text-xl sm:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed" style="font-family: 'Stylish1';" data-aos="fade-up" data-aos-delay="200">
+                    Building a stronger, more united UMaT through <br class="hidden sm:block">
+                    <span class="text-green-600 dark:text-green-400 font-semibold">servant leadership</span> and student-focused governance
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
+                    <button class="px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        <i class="ph ph-rocket-launch mr-2"></i>
+                        Get Involved
+                    </button>
+                    <button class="px-8 py-4 bg-transparent border-2 border-green-500 text-green-600 dark:text-green-400 hover:bg-green-500 hover:text-white font-semibold rounded-lg transition-all duration-300">
+                        <i class="ph ph-download mr-2"></i>
+                        Download Manifesto
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section class="py-20 bg-white dark:bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+                    
+                    <!-- Mission -->
+                    <div class="text-center lg:text-left" data-aos="fade-right">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full mb-6">
+                            <i class="ph ph-target text-3xl text-green-600 dark:text-green-400"></i>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6" style="font-family: 'Stylish1';">
+                            Our Mission
+                        </h2>
+                        <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                            To serve as a bridge between students and administration, advocating for student welfare, academic excellence, and creating an inclusive campus environment where every student can thrive and reach their full potential.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">
+                                <i class="ph ph-users mr-1"></i>
+                                Student Advocacy
+                            </span>
+                            <span class="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">
+                                <i class="ph ph-graduation-cap mr-1"></i>
+                                Academic Excellence
+                            </span>
+                            <span class="px-4 py-2 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">
+                                <i class="ph ph-handshake mr-1"></i>
+                                Inclusive Environment
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Vision -->
+                    <div class="text-center lg:text-left" data-aos="fade-left">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full mb-6">
+                            <i class="ph ph-eye text-3xl text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6" style="font-family: 'Stylish1';">
+                            Our Vision
+                        </h2>
+                        <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                            To transform UMaT into a beacon of student empowerment, innovation, and academic distinction, where student voices are heard, respected, and acted upon to create lasting positive change for generations to come.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
+                                <i class="ph ph-lightbulb mr-1"></i>
+                                Innovation
+                            </span>
+                            <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
+                                <i class="ph ph-megaphone mr-1"></i>
+                                Student Voice
+                            </span>
+                            <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
+                                <i class="ph ph-trophy mr-1"></i>
+                                Excellence
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Policy Focus Areas -->
+        <section class="py-20 bg-gray-50 dark:bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6" style="font-family: 'LogoFont';">
+                        Key Policy <span class="text-green-500">Focus Areas</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                        Our comprehensive approach to student governance focuses on six critical areas that directly impact your university experience.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Policy Card 1 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-6">
+                            <i class="ph ph-graduation-cap text-2xl text-green-600 dark:text-green-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4" style="font-family: 'Stylish2';">
+                            Academic Excellence
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Improving library resources, study spaces, and academic support services to ensure every student has the tools needed for success.
+                        </p>
+                        <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-2">
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Extended library hours</li>
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Tutoring programs</li>
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Study group facilitation</li>
+                        </ul>
+                    </div>
+
+                    <!-- Policy Card 2 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-6">
+                            <i class="ph ph-heart text-2xl text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4" style="font-family: 'Stylish2';">
+                            Student Welfare
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Prioritizing mental health, healthcare access, and overall well-being to create a supportive campus environment.
+                        </p>
+                        <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-2">
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Counseling services</li>
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Health awareness campaigns</li>
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Stress management programs</li>
+                        </ul>
+                    </div>
+
+                    <!-- Policy Card 3 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-6">
+                            <i class="ph ph-wifi-high text-2xl text-purple-600 dark:text-purple-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4" style="font-family: 'Stylish2';">
+                            Digital Infrastructure
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Enhancing campus connectivity, digital resources, and technology access for the modern student experience.
+                        </p>
+                        <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-2">
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Improved WiFi coverage</li>
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Digital learning platforms</li>
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Tech support services</li>
+                        </ul>
+                    </div>
+
+                    <!-- Policy Card 4 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900 rounded-lg flex items-center justify-center mb-6">
+                            <i class="ph ph-users text-2xl text-yellow-600 dark:text-yellow-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4" style="font-family: 'Stylish2';">
+                            Campus Life
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Fostering a vibrant campus community through events, clubs, and recreational activities that bring students together.
+                        </p>
+                        <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-2">
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Cultural events</li>
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Sports facilities</li>
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Club support</li>
+                        </ul>
+                    </div>
+
+                    <!-- Policy Card 5 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="500">
+                        <div class="w-12 h-12 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center mb-6">
+                            <i class="ph ph-currency-dollar text-2xl text-red-600 dark:text-red-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4" style="font-family: 'Stylish2';">
+                            Financial Support
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Advocating for affordable education, scholarship opportunities, and financial aid programs for all students.
+                        </p>
+                        <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-2">
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Scholarship programs</li>
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Emergency financial aid</li>
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Work-study opportunities</li>
+                        </ul>
+                    </div>
+
+                    <!-- Policy Card 6 -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="600">
+                        <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center mb-6">
+                            <i class="ph ph-megaphone text-2xl text-indigo-600 dark:text-indigo-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4" style="font-family: 'Stylish2';">
+                            Transparency & Communication
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Establishing clear communication channels and transparent decision-making processes to keep students informed and involved.
+                        </p>
+                        <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-2">
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Regular town halls</li>
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Digital updates</li>
+                            <li class="flex items-center"><i class="ph ph-check text-green-500 mr-2"></i>Feedback systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inspirational Quote Section -->
+        <section class="py-20 bg-green-600 dark:bg-green-700 text-white relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-green-600 to-green-500 dark:from-green-700 dark:to-green-600"></div>
+            <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+                <div class="mb-8">
+                    <i class="ph ph-quotes text-6xl text-green-200 dark:text-green-300"></i>
+                </div>
+                <blockquote class="text-2xl sm:text-3xl lg:text-4xl font-light leading-relaxed mb-8" style="font-family: 'Stylish1';">
+                    "Leadership is not about being in charge. It's about taking care of those in your charge."
+                </blockquote>
+                <cite class="text-lg text-green-200 dark:text-green-300 font-medium">
+                    — Washington for UMaT SRC 2025
+                </cite>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-20 bg-white dark:bg-gray-900">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6" style="font-family: 'LogoFont';">
+                    Ready to Make a <span class="text-green-500">Difference?</span>
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                    Join our movement for positive change at UMaT. Together, we can build a better future for all students.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        <i class="ph ph-hand-heart mr-2"></i>
+                        Join the Campaign
+                    </button>
+                    <button class="px-8 py-4 bg-transparent border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-green-500 hover:text-green-500 font-semibold rounded-lg transition-all duration-300">
+                        <i class="ph ph-envelope mr-2"></i>
+                        Contact Us
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                
+                <!-- Brand Section -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="text-2xl font-bold text-green-600 dark:text-green-400" style="font-family: 'LogoFont';">
+                            Washington 2025
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 max-w-md">
+                        Building a stronger, more united UMaT through servant leadership and student-focused governance.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon" aria-label="WhatsApp">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="X">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about" class="footer-link">About</a></li>
+                        <li><a href="/campaign" class="footer-link">Campaign</a></li>
+                        <li><a href="/vision" class="footer-link">Vision</a></li>
+                        <li><a href="/resources" class="footer-link">Resources</a></li>
+                        <li><a href="/contact" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Contact</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 dark:text-green-400 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="footer-link">UMaT Campus, Tarkwa</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 dark:text-green-400 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <span class="footer-link">washington@umatsrc.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-green-600 dark:text-green-400 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            <span class="footer-link">+233 24 123 4567</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Stay Updated</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Subscribe to our newsletter for campaign updates.</p>
+                    <form class="flex flex-col sm:flex-row gap-2">
+                        <input type="email" placeholder="Your email" class="footer-input" required>
+                        <button type="submit" class="footer-button">
+                            Subscribe
+                        </button>
+                    </form>
+                </div> -->
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-200 dark:border-gray-700 mt-12 pt-8 text-center text-gray-500 dark:text-gray-400 text-sm">
+                <p>&copy; 2025 Washington for UMaT SRC President. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="src/js/vision.js"></script>
+</body>
+</html>

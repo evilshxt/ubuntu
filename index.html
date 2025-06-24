@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Washington for SRC 2025</title>
+        
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="src/css/loader.css">
+</head>
+<body class="overflow-hidden bg-black">
+    <!-- Loading Screen Container -->
+    <div id="loader" class="fixed inset-0 z-50 flex flex-col items-center justify-center">
+        <!-- Matrix Background Canvas -->
+        <canvas id="matrix-canvas" class="absolute inset-0 w-full h-full"></canvas>
+        
+        <!-- Three.js 3D Scene -->
+        <canvas id="three-canvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+        
+        <!-- Content Overlay -->
+        <div class="relative z-10 text-center">
+            <!-- 3D Object Space (handled by Three.js) -->
+            <div class="h-64 w-64 mx-auto mb-8"></div>
+            
+            <!-- Main Text -->
+            <h1 id="main-title" class="text-4xl md:text-6xl font-bold text-green-400 mb-4 font-orbitron tracking-wider">
+                Washington for SRC 2025
+            </h1>
+            
+            <!-- Subtitle -->
+            <p id="subtitle" class="text-lg md:text-xl text-green-300 mb-8 font-inter font-light">
+                Loading the Vision<span id="dots">...</span>
+            </p>
+            
+            <!-- Loading Progress Ring -->
+            <div class="relative w-24 h-24 mx-auto mb-6">
+                <svg class="w-24 h-24 transform -rotate-90" viewBox="0 0 100 100">
+                    <!-- Background circle -->
+                    <circle
+                        cx="50"
+                        cy="50"
+                        r="40"
+                        stroke="rgba(0, 255, 153, 0.2)"
+                        stroke-width="4"
+                        fill="none"
+                    />
+                    <!-- Progress circle -->
+                    <circle
+                        id="progress-ring"
+                        cx="50"
+                        cy="50"
+                        r="40"
+                        stroke="#00ff99"
+                        stroke-width="4"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-dasharray="251.2"
+                        stroke-dashoffset="251.2"
+                        class="drop-shadow-lg"
+                        style="filter: drop-shadow(0 0 8px #00ff99);"
+                    />
+                </svg>
+                
+                <!-- Percentage Text -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <span id="progress-text" class="text-green-400 font-bold text-lg font-orbitron">0%</span>
+                </div>
+            </div>
+            
+            <!-- Tech Icons -->
+            <div class="flex justify-center space-x-4 opacity-60">
+                <i class="ph ph-circuit text-green-400 text-xl"></i>
+                <i class="ph ph-cpu text-green-400 text-xl"></i>
+                <i class="ph ph-lightning text-green-400 text-xl"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content (Hidden Initially) -->
+    <div id="main-content" class="hidden min-h-screen bg-black text-white">
+        <div class="container mx-auto px-4 py-20 text-center">
+            <h1 class="text-5xl font-bold text-green-400 mb-6 font-orbitron">
+                Welcome to the Future
+            </h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                UBUNTU - I am because we are!!
+            </p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="src/js/loader.js"></script>
+</body>
+</html>
