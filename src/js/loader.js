@@ -1,7 +1,6 @@
-// Import required libraries (assuming they're installed via npm)
-import * as THREE from 'https://cdn.skypack.dev/three@0.132.2';
-import { gsap } from 'https://cdn.skypack.dev/gsap@3.12.2';
-import { ScrollTrigger } from 'https://cdn.skypack.dev/gsap@3.12.2/ScrollTrigger';
+import * as THREE from 'three';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);

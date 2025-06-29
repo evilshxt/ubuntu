@@ -136,4 +136,96 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('close-icon')?.classList.toggle('hidden', isOpen);
         });
     }
+
+    // Simple and Reliable Accordion Functionality
+    function initializeAccordion() {
+        const infoboxSections = document.querySelectorAll('.infobox-section');
+        
+        infoboxSections.forEach((section, index) => {
+            const title = section.querySelector('.infobox-section-title');
+            const content = section.querySelector('.infobox-fields');
+            const icon = section.querySelector('.accordion-icon');
+            
+            if (!title || !content || !icon) return;
+            
+            // Set initial state
+            const isMobile = window.innerWidth <= 768;
+            const isFirstSection = index === 0;
+            
+            if (isMobile) {
+                // Mobile: first section open, others closed
+                if (isFirstSection) {
+                    content.style.display = 'block';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    content.style.display = 'none';
+                    icon.style.transform = 'rotate(-90deg)';
+                }
+            } else {
+                // Desktop: all sections open
+                content.style.display = 'block';
+                icon.style.transform = 'rotate(0deg)';
+            }
+            
+            // Add smooth animations to the onclick function
+            title.addEventListener('click', function(e) {
+                // Let the onclick handler work, but add smooth animation
+                setTimeout(() => {
+                    if (content.style.display === 'block') {
+                        gsap.fromTo(content, {
+                            height: 0,
+                            opacity: 0
+                        }, {
+                            height: 'auto',
+                            opacity: 1,
+                            duration: 0.3,
+                            ease: 'power2.out'
+                        });
+                    }
+                }, 10);
+            });
+        });
+    }
+
+    // Initialize accordion
+    initializeAccordion();
+    console.log('Accordion initialized! Total sections:', document.querySelectorAll('.infobox-section').length);
+    
+    // Re-initialize on window resize to handle mobile/desktop transitions
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            console.log('Window resized, reinitializing accordion...');
+            initializeAccordion();
+        }, 250);
+    });
+    
+    // Also initialize on orientation change for mobile
+    window.addEventListener('orientationchange', () => {
+        setTimeout(() => {
+            console.log('Orientation changed, reinitializing accordion...');
+            initializeAccordion();
+        }, 500);
+    });
+
+    // Add hover effects for infobox sections
+    const infoboxSections = document.querySelectorAll('.infobox-section');
+    infoboxSections.forEach(section => {
+        section.addEventListener('mouseenter', () => {
+            gsap.to(section, {
+                backgroundColor: 'rgba(34, 197, 94, 0.05)',
+                duration: 0.2,
+                ease: 'power2.out'
+            });
+        });
+        
+        section.addEventListener('mouseleave', () => {
+            gsap.to(section, {
+                backgroundColor: 'transparent',
+                duration: 0.2,
+                ease: 'power2.out'
+            });
+        });
+    });
 });

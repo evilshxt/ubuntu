@@ -203,9 +203,329 @@ section[style*="opacity: 0"] {
 }
 
 .footer-input {
-    @apply px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-700 dark:text-white;
+    @apply px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-green-500 focus:border-transparent;
 }
 
 .footer-button {
-    @apply px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800;
+    @apply px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200;
+}
+
+/* Wikipedia-style Infobox Styles */
+.infobox-section {
+    @apply border-b border-gray-200 dark:border-gray-700 pb-4 last:border-b-0 last:pb-0;
+}
+
+.infobox-section-title {
+    @apply text-sm font-bold text-gray-900 dark:text-white mb-3 uppercase tracking-wide;
+}
+
+.infobox-field {
+    @apply flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2 mb-2 last:mb-0;
+}
+
+.infobox-label {
+    @apply text-sm font-semibold text-gray-700 dark:text-gray-300 min-w-[80px] sm:min-w-[100px] flex-shrink-0;
+}
+
+.infobox-value {
+    @apply text-sm text-gray-600 dark:text-gray-400 leading-relaxed;
+}
+
+/* Responsive adjustments for infobox */
+@media (max-width: 1024px) {
+    .infobox-field {
+        @apply flex-col items-start;
+    }
+    
+    .infobox-label {
+        @apply min-w-full mb-1;
+    }
+}
+
+/* Hover effects for infobox */
+.infobox-section:hover .infobox-section-title {
+    @apply text-green-600 dark:text-green-400 transition-colors duration-200;
+}
+
+/* Animation for infobox sections */
+.infobox-section {
+    @apply transition-all duration-300;
+}
+
+.infobox-section:hover {
+    @apply transform translate-x-1;
+}
+
+/* Accordion Styles */
+.accordion-trigger {
+    @apply flex items-center justify-between w-full;
+}
+
+.accordion-icon {
+    @apply text-xs;
+}
+
+/* Mobile-specific accordion behavior */
+@media (max-width: 768px) {
+    .infobox-section {
+        cursor: pointer;
+        border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .dark .infobox-section {
+        border-bottom-color: #374151;
+    }
+    
+    /* Hide stat cards on mobile */
+    .stat-card {
+        display: none !important;
+    }
+    
+    /* Ensure proper touch targets */
+    .infobox-section-title {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+        background-color: transparent;
+        transition: background-color 0.2s ease;
+    }
+    
+    .infobox-section-title:hover {
+        background-color: rgba(34, 197, 94, 0.05);
+    }
+    
+    .dark .infobox-section-title:hover {
+        background-color: rgba(34, 197, 94, 0.1);
+    }
+    
+    /* Improve field layout on mobile */
+    .infobox-field {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.75rem 0;
+    }
+    
+    .infobox-label {
+        min-width: auto;
+        margin-right: 0;
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+        color: #374151;
+    }
+    
+    .dark .infobox-label {
+        color: #d1d5db;
+    }
+    
+    .infobox-value {
+        color: #111827;
+        line-height: 1.6;
+    }
+    
+    .dark .infobox-value {
+        color: #f9fafb;
+    }
+    
+    /* Ensure content visibility */
+    .infobox-fields {
+        padding: 0 1.5rem 1rem 1.5rem;
+    }
+}
+
+/* Custom styles for infobox */
+.infobox-section {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.dark .infobox-section {
+    border-bottom-color: #374151;
+}
+
+.infobox-section:last-child {
+    border-bottom: none;
+}
+
+.infobox-section-title {
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.dark .infobox-section-title {
+    color: #d1d5db;
+}
+
+.infobox-section-title:hover {
+    background-color: #f9fafb;
+}
+
+.dark .infobox-section-title:hover {
+    background-color: #1f2937;
+}
+
+.infobox-fields {
+    padding: 0 1.5rem 1rem 1.5rem;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.infobox-field {
+    display: flex;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.dark .infobox-field {
+    border-bottom-color: #4b5563;
+}
+
+.infobox-field:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.infobox-label {
+    font-weight: 500;
+    color: #6b7280;
+    min-width: 120px;
+    flex-shrink: 0;
+    margin-right: 1rem;
+}
+
+.dark .infobox-label {
+    color: #9ca3af;
+}
+
+.infobox-value {
+    color: #111827;
+    flex: 1;
+    line-height: 1.5;
+}
+
+.dark .infobox-value {
+    color: #f9fafb;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dark .stat-card {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+.stat-icon {
+    background: #dcfce7;
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    color: #16a34a;
+    flex-shrink: 0;
+}
+
+.dark .stat-icon {
+    background: #14532d;
+    color: #4ade80;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1;
+}
+
+.dark .stat-number {
+    color: #f9fafb;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+}
+
+.dark .stat-label {
+    color: #9ca3af;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Aspect ratio for image */
+.aspect-w-4 {
+    position: relative;
+    width: 100%;
+}
+
+.aspect-w-4::before {
+    content: '';
+    display: block;
+    padding-bottom: 125%; /* 4:5 ratio */
+}
+
+.aspect-h-5 > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive grid layout for bio section */
+@media (max-width: 1024px) {
+    .bio-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .bio-image {
+        order: 1 !important;
+    }
+    
+    .bio-content {
+        order: 2 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .bio-grid {
+        gap: 1.5rem;
+    }
+    
+    /* Force correct order on mobile */
+    .bio-image {
+        order: 1 !important;
+    }
+    
+    .bio-content {
+        order: 2 !important;
+    }
+    
+    .infobox-field {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .infobox-label {
+        min-width: auto;
+        margin-right: 0;
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+    }
 }

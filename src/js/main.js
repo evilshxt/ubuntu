@@ -1,4 +1,3 @@
-// Import necessary libraries (these would be from your npm installations)
 import * as THREE from 'three';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';

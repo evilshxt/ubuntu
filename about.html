@@ -146,10 +146,10 @@
         <!-- Bio Section -->
         <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
             <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start bio-grid">
                     
                     <!-- Image Column -->
-                    <div class="order-2 lg:order-1" data-aos="fade-right">
+                    <div class="order-1 lg:order-1 bio-image" data-aos="fade-right">
                         <div class="relative">
                             <div class="aspect-w-4 aspect-h-5 rounded-2xl overflow-hidden shadow-2xl">
                                 <img src="/assets/ubuntu.jpeg" alt="About Washington" class="object-cover w-full h-full" />
@@ -160,59 +160,147 @@
                         </div>
                     </div>
                     
-                    <!-- Content Column -->
-                    <div class="order-1 lg:order-2" data-aos="fade-left">
-                        <div class="space-y-6">
-                            <div class="inline-flex items-center px-4 py-2 rounded-full bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-sm font-medium">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                </svg>
-                                Meet Your Future SRC President
+                    <!-- Wikipedia-style Infobox Column -->
+                    <div class="order-2 lg:order-2 bio-content" data-aos="fade-left">
+                        <div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+                            <div class="p-6 bg-gray-100 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
+                                <h2 class="text-2xl font-bold text-gray-900 dark:text-white" style="font-family: 'Stylish1';">Emmanuel Washington</h2>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">UMaT SRC Presidential Candidate 2025</p>
                             </div>
                             
-                            <h2 class="section-title" style="font-family: 'Stylish1';">
-                                My Story
-                            </h2>
-                            
-                            <div class="prose-content space-y-4">
-                                <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-                                    Washington was born in Kumasi, Ashanti Region, Ghana, to parents John Asuman and Sarah Anning. He hails from Ahafo Kenyasi.
-                                </p>
-                                <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-                                    <strong>Education:</strong> Emmanuel Washington had his basic school education at State Experimental Basic School II in Ahodwo-Nhyiaeso, continued to Amaniampong Senior High School in Mampong for his senior high education, and is currently studying at the University of Mines and Technology, where he is reading a bachelor's degree in Minerals Engineering. Before embarking on his activism career, he completed a Fellowship with the Mampong Leadership Initiative, which enriched his knowledge and contributed significantly to his personal and professional growth.
-                                </p>
-                                <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-                                    <strong>Career:</strong> Washington started his career as a Science and Chemistry Club Organizing Secretary in 2018 and later became the President for the Science and Chemistry Club in 2019 in his alma mater. In 2020, he was the General Secretary for the Students Representative Council for Amaniampong Senior High School and later became the Ashanti Regional Representative Council General Secretary, Social Committee Ashanti for the 22nd Annual Residential Congress. Washington bowed out of leadership and was awarded the Innovative Student of the Year in 2020 after participating in National Science and Maths Quiz, National Independence Quiz, ARSRC Inter-School Quiz, and Breast Cancer Awareness Quiz.
-                                </p>
-                                <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-                                    <strong>Politics:</strong> In 2024, he contested for the high office of the SRC President and lost. After the election, he embarked on a thank you tour and expressed his gratitude for the votes in the ended elections and assured the students that even though it couldn't work, he is highly confident about his destiny timeline and knows the next chapter will be great. He's running for the office of the UMaT SRC President again.
-                                </p>
-                            </div>
-                            
-                            <!-- Quick Stats -->
-                            <div class="grid grid-cols-2 gap-6 mt-8">
-                                <div class="stat-card">
-                                    <div class="stat-icon">
-                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
-                                        </svg>
+                            <div class="infobox-section">
+                                <h3 class="infobox-section-title accordion-trigger flex items-center justify-between" onclick="toggleSection(this)">
+                                    Personal Information
+                                    <span class="accordion-icon text-green-600 dark:text-green-400 ml-2">▼</span>
+                                </h3>
+                                <div class="infobox-fields">
+                                    <div class="infobox-field">
+                                        <span class="infobox-label">Full Name</span>
+                                        <span class="infobox-value">Emmanuel Washington</span>
                                     </div>
-                                    <div>
-                                        <div class="stat-number">3rd</div>
-                                        <div class="stat-label">Year Minerals Engineering</div>
+                                    <div class="infobox-field">
+                                        <span class="infobox-label">Born</span>
+                                        <span class="infobox-value">Kumasi, Ashanti Region, Ghana</span>
+                                    </div>
+                                    <div class="infobox-field">
+                                        <span class="infobox-label">Parents</span>
+                                        <span class="infobox-value">John Asuman and Sarah Anning</span>
+                                    </div>
+                                    <div class="infobox-field">
+                                        <span class="infobox-label">Hometown</span>
+                                        <span class="infobox-value">Ahafo Kenyasi</span>
                                     </div>
                                 </div>
-                                
-                                <div class="stat-card">
-                                    <div class="stat-icon">
-                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                        </svg>
+                            </div>
+                            
+                            <div class="infobox-section">
+                                <h3 class="infobox-section-title accordion-trigger flex items-center justify-between" onclick="toggleSection(this)">
+                                    Education
+                                    <span class="accordion-icon text-green-600 dark:text-green-400 ml-2">▼</span>
+                                </h3>
+                                <div class="infobox-fields">
+                                    <div class="infobox-field">
+                                        <span class="infobox-label">Basic School</span>
+                                        <span class="infobox-value">State Experimental Basic School II, Ahodwo-Nhyiaeso</span>
                                     </div>
-                                    <div>
-                                        <div class="stat-number">3+</div>
-                                        <div class="stat-label">Years of Leadership</div>
+                                    <div class="infobox-field">
+                                        <span class="infobox-label">Senior High</span>
+                                        <span class="infobox-value">Amaniampong Senior High School, Mampong</span>
                                     </div>
+                                    <div class="infobox-field">
+                                        <span class="infobox-label">University</span>
+                                        <span class="infobox-value">University of Mines and Technology (Minerals Engineering)</span>
+                                    </div>
+                                    <div class="infobox-field">
+                                        <span class="infobox-label">Fellowship</span>
+                                        <span class="infobox-value">Mampong Leadership Initiative</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="infobox-section">
+                                <h3 class="infobox-section-title accordion-trigger flex items-center justify-between" onclick="toggleSection(this)">
+                                    Leadership Experience
+                                    <span class="accordion-icon text-green-600 dark:text-green-400 ml-2">▼</span>
+                                </h3>
+                                <div class="infobox-fields">
+                                    <div class="infobox-field">
+                                        <span class="infobox-label">2018</span>
+                                        <span class="infobox-value">Science and Chemistry Club Organizing Secretary</span>
+                                    </div>
+                                    <div class="infobox-field">
+                                        <span class="infobox-label">2019</span>
+                                        <span class="infobox-value">President, Science and Chemistry Club</span>
+                                    </div>
+                                    <div class="infobox-field">
+                                        <span class="infobox-label">2020</span>
+                                        <span class="infobox-value">SRC General Secretary, Amaniampong SHS</span>
+                                    </div>
+                                    <div class="infobox-field">
+                                        <span class="infobox-label">2020</span>
+                                        <span class="infobox-value">Ashanti Regional Representative Council General Secretary</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="infobox-section">
+                                <h3 class="infobox-section-title accordion-trigger flex items-center justify-between" onclick="toggleSection(this)">
+                                    Awards & Achievements
+                                    <span class="accordion-icon text-green-600 dark:text-green-400 ml-2">▼</span>
+                                </h3>
+                                <div class="infobox-fields">
+                                    <div class="infobox-field">
+                                        <span class="infobox-label">2020</span>
+                                        <span class="infobox-value">Innovative Student of the Year</span>
+                                    </div>
+                                    <div class="infobox-field">
+                                        <span class="infobox-label">Competitions</span>
+                                        <span class="infobox-value">National Science and Maths Quiz, National Independence Quiz, ARSRC Inter-School Quiz, Breast Cancer Awareness Quiz</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="infobox-section">
+                                <h3 class="infobox-section-title accordion-trigger flex items-center justify-between" onclick="toggleSection(this)">
+                                    Political Journey
+                                    <span class="accordion-icon text-green-600 dark:text-green-400 ml-2">▼</span>
+                                </h3>
+                                <div class="infobox-fields">
+                                    <div class="infobox-field">
+                                        <span class="infobox-label">2024</span>
+                                        <span class="infobox-value">Contested for UMaT SRC President</span>
+                                    </div>
+                                    <div class="infobox-field">
+                                        <span class="infobox-label">2025</span>
+                                        <span class="infobox-value">Running for UMaT SRC President again</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Stats -->
+                        <div class="grid grid-cols-2 gap-6 mt-8">
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="stat-number">3rd</div>
+                                    <div class="stat-label">Year Minerals Engineering</div>
+                                </div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-icon">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="stat-number">3+</div>
+                                    <div class="stat-label">Years of Leadership</div>
                                 </div>
                             </div>
                         </div>
@@ -345,7 +433,7 @@
                     <div class="value-card" data-aos="fade-up" data-aos-delay="400">
                         <div class="value-icon">
                             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                                <path d="M13 6a3 3 0 11-6 0 3 3 0 000 6zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
                             </svg>
                         </div>
                         <h3 class="value-title">Unity (Ubuntu)</h3>
@@ -583,7 +671,52 @@
             </div>
         </div>
     </footer>
-
+    <script>
+    // Simple toggle function that works on both mobile and desktop
+    function toggleSection(element) {
+        const content = element.nextElementSibling;
+        const icon = element.querySelector('.accordion-icon');
+        
+        console.log('Toggle function called!', element.textContent.trim());
+        
+        if (content.style.display === 'none' || content.style.display === '') {
+            content.style.display = 'block';
+            icon.style.transform = 'rotate(0deg)';
+            console.log('Opening section');
+        } else {
+            content.style.display = 'none';
+            icon.style.transform = 'rotate(-90deg)';
+            console.log('Closing section');
+        }
+    }
+    
+    // Set initial state on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        const isMobile = window.innerWidth <= 768;
+        const sections = document.querySelectorAll('.infobox-section');
+        
+        sections.forEach((section, index) => {
+            const title = section.querySelector('.infobox-section-title');
+            const content = section.querySelector('.infobox-fields');
+            const icon = section.querySelector('.accordion-icon');
+            
+            if (isMobile) {
+                // Mobile: first section open, others closed
+                if (index === 0) {
+                    content.style.display = 'block';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    content.style.display = 'none';
+                    icon.style.transform = 'rotate(-90deg)';
+                }
+            } else {
+                // Desktop: all sections open
+                content.style.display = 'block';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        });
+    });
+    </script>
     <script type="module" src="src/js/about.js"></script>
 </body>
 </html>
